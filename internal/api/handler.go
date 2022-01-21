@@ -23,6 +23,7 @@ const (
 	wlimit = 10
 )
 
+// handleUpload handles file upload, on done, it will count the top X most words and outputs it as JSON.
 func (a *API) handleUpload(w http.ResponseWriter, r *http.Request) {
 	minWordLength := 2
 
@@ -162,6 +163,8 @@ func (a *API) handleWordFrequencies(w http.ResponseWriter, r *http.Request) {
 	_, _ = w.Write(out) //nolint:errcheck
 }
 
+// readInput function scans for words in the file / input string, filter by the word length, and limit to top-X number
+// of the output
 func readInput(reader io.Reader, s *store.Store, minWordLength, limit int) (*model.PairList, error) {
 	scanner := bufio.NewScanner(reader)
 	scanner.Split(bufio.ScanWords)

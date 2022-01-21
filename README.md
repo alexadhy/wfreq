@@ -91,19 +91,3 @@ $ # will output:
     }
 ]
 ```
-
-
-## Stats
-
-```bash
-$ bombardier -H "Content-Type: multipart/form-data; boundary=Asrf456BGe4h" -c50 -m POST -f ./workspace/mangtas/wfreq/tests/crimes_and_punishment.txt http://localhost:3334/upload
-Bombarding http://localhost:3334/upload for 10s using 50 connection(s)
-[=============================================================================================================================================================================================] 10s
-Done!
-Statistics        Avg      Stdev        Max
-  Reqs/sec       907.84     734.03    3296.93
-  Latency       55.49ms    25.53ms   154.77ms
-  HTTP codes:
-    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 8947, 5xx - 0
-    others - 0
-  Throughput:     0.98GB/s```
